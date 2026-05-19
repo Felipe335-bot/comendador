@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Lanchas Comendador | Aluguel de Lanchas e Jet Ski</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: Plus Jakarta Sans + DM Serif Display -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #f5f7fb;
+      color: #1a2a3a;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    /* Header minimalista */
+    header {
+      position: center;
+      top: 16px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.96);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      padding: 16px 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #0a2540;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.logo-text span {
+  font-size: 0.65rem;
+  color: #2563eb;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+    .logo h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: #0c2845;
+    }
+
+    .logo span {
+      font-size: 0.7rem;
+      color: #2563eb;
+      letter-spacing: 2px;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4a5b6e;
+      font-weight: 500;
+      transition: color 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a:hover {
+      color: rgb(12, 40, );
+    }
+
+    .instagram-badge {
+      background: #f0f2f5;
+      padding: 8px 20px;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s;
+    }
+
+    .instagram-badge a {
+      color: #1a2a3a;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .instagram-badge i {
+      color: #2563eb;
+      font-size: 1.2rem;
+    }
+
+    .instagram-badge:hover {
+      background: #e8ecf1;
+      transform: translateY(-1px);
+    }
+
+    /* Hero section clean */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      padding-top: 70px;
+      background: linear-gradient(135deg, #eceef0 0%, #eef2f6 100%);
+    }
+
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      font-family: 'DM Serif Display', serif;
+      color: #0a2540;
+    }
+
+    .hero-content .blue-text {
+      color: #2563eb;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      color: #4a5b6e;
+      margin: 24px 0 32px;
+      line-height: 1.5;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: #1d4ed8;
+      padding: 14px 34px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      color: white;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37,99,235,0.25);
+    }
+
+    .btn-outline {
+      border: 2px solid #1d4ed8;
+      background: transparent;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #1d4ed8;
+      transition: 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 48px;
+    }
+
+    .stat-item h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1d4ed8;
+    }
+
+    .stat-item span {
+      color: #5a6e7e;
+      font-size: 0.85rem;
+    }
+
+    .hero-image {
+      background: url('./img/bannersite.jpeg') center/cover;
+      border-radius: 24px;
+      min-height: 400px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+
+    /* Seção Catálogo */
+    .catalog {
+      padding: 80px 0;
+      background: #ffffff;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      font-family: 'DM Serif Display', serif;
+      color: #0a2540;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: #5a6e7e;
+      margin-bottom: 60px;
+      font-size: 1rem;
+    }
+
+    /* Cards de lanchas */
+    .boats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 40px;
+      margin-bottom: 70px;
+    }
+
+    .boat-card {
+      background: #ffffff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      border: 1px solid #eef2f6;
+    }
+
+    .boat-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    .boat-img {
+      height: 240px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .boat-gallery {
+      padding: 16px 20px 0 20px;
+    }
+
+    .gallery-title {
+      font-size: 0.75rem;
+      color: #2563eb;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .gallery-thumbs {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+    }
+
+    .gallery-thumbs img {
+      width: 65px;
+      height: 65px;
+      object-fit: cover;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 2px solid transparent;
+    }
+
+    .gallery-thumbs img:hover {
+      transform: scale(1.03);
+      border-color: #2563eb;
+    }
+
+    .gallery-thumbs::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .gallery-thumbs::-webkit-scrollbar-track {
+      background: #eef2f6;
+      border-radius: 10px;
+    }
+
+    .gallery-thumbs::-webkit-scrollbar-thumb {
+      background: #2563eb;
+      border-radius: 10px;
+    }
+
+    .boat-info {
+      padding: 20px 24px 28px;
+    }
+
+    .boat-info h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #0a2540;
+    }
+
+    .boat-specs {
+      display: flex;
+      gap: 20px;
+      margin: 12px 0;
+      color: #5a6e7e;
+      font-size: 0.8rem;
+    }
+
+    .price {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #2563eb;
+      margin: 10px 0;
+    }
+
+    .select-boat {
+      background: #f0f2f5;
+      border: none;
+      width: 100%;
+      padding: 12px;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #2563eb;
+      cursor: pointer;
+      transition: 0.2s;
+      margin-top: 10px;
+      font-family: inherit;
+    }
+
+    .select-boat:hover {
+      background: #2563eb;
+      color: white;
+    }
+
+    /* Experiências/E-Book Cards */
+    .experiences-section {
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 2px solid #eef2f6;
+    }
+
+    .experiences-title {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      font-family: 'DM Serif Display', serif;
+      color: #0a2540;
+      margin-bottom: 16px;
+    }
+
+    .experiences-sub {
+      text-align: center;
+      color: #5a6e7e;
+      margin-bottom: 50px;
+      font-size: 1rem;
+    }
+
+    .experiences-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .exp-card {
+      background: #ffffff;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+      border: 1px solid #eef2f6;
+      transition: all 0.3s ease;
+      scroll-margin-top: 100px;
+    }
+
+    .exp-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    .exp-video {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background: #1a1a2e;
+    }
+
+    .exp-info {
+      padding: 24px;
+    }
+
+    .exp-info h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #0a2540;
+    }
+
+    .exp-info p {
+      color: #5a6e7e;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .exp-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .exp-feature {
+      background: #f0f2f5;
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #2563eb;
+    }
+
+    .exp-price {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #2563eb;
+      margin-top: 16px;
+    }
+
+    /* Anchor points para cada experiência */
+    .anchor-points {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+
+    .anchor-btn {
+      background: #f0f2f5;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #4a5b6e;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .anchor-btn:hover {
+      background: #2563eb;
+      color: white;
+    }
+
+    /* Jet Ski Card */
+    .jetski-showcase {
+      background: #f8fafc;
+      border-radius: 28px;
+      padding: 40px;
+      margin-top: 20px;
+      border: 1px solid #eef2f6;
+    }
+
+    .jetski-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .jetski-details {
+      flex: 1;
+    }
+
+    .jetski-details h2 {
+      font-size: 1.8rem;
+      font-family: 'DM Serif Display', serif;
+      color: #0a2540;
+      margin-bottom: 12px;
+    }
+
+    .price-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 25px 0;
+    }
+
+    .price-pill {
+      background: white;
+      padding: 10px 20px;
+      border-radius: 40px;
+      border: 1px solid #e2e8f0;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-weight: 500;
+      color: #1a2a3a;
+    }
+
+    .price-pill:hover,
+    .price-pill.active {
+      background: #2563eb;
+      border-color: #2563eb;
+      color: white;
+    }
+
+    .jetski-img {
+      flex: 0.7;
+      min-width: 240px;
+    }
+
+    .jetski-img img {
+      width: 100%;
+      border-radius: 20px;
+    }
+
+    /* Formulário */
+    .form-section {
+      padding: 80px 0;
+      background: #ffffff;
+    }
+
+    .form-card {
+      background: #f8fafc;
+      border-radius: 32px;
+      padding: 48px;
+      max-width: 700px;
+      margin: 0 auto;
+      border: 1px solid #eef2f6;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #1a2a3a;
+      font-size: 0.85rem;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 14px 18px;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      color: #1a2a3a;
+      font-size: 1rem;
+      transition: 0.2s;
+      font-family: inherit;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    .checkbox-flex {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .checkbox-flex input {
+      width: 18px;
+      height: 18px;
+      accent-color: #2563eb;
+    }
+
+    .jetski-extra {
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      margin: 15px 0;
+      display: none;
+      border: 1px solid #eef2f6;
+    }
+
+    .jetski-extra.active {
+      display: block;
+    }
+
+    .total-box {
+      background: linear-gradient(135deg, #2563eb10, #1d4ed805);
+      padding: 16px;
+      border-radius: 20px;
+      text-align: center;
+      margin: 25px 0;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border: 1px solid #e2e8f0;
+      color: #0a2540;
+    }
+
+    .btn-wa {
+      background: #25D366;
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+      font-family: inherit;
+    }
+
+    .btn-wa:hover {
+      background: #128C7E;
+      transform: translateY(-2px);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 85%;
+      max-height: 80%;
+      border-radius: 16px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .lightbox-close:hover {
+      color: #2563eb;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2.5rem;
+      color: white;
+      cursor: pointer;
+      padding: 20px;
+      transition: 0.2s;
+    }
+
+    .lightbox-prev {
+      left: 20px;
+    }
+
+    .lightbox-next {
+      right: 20px;
+    }
+
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+      color: #2563eb;
+    }
+
+    footer {
+      background: #0a2540;
+      padding: 48px 0 32px;
+      text-align: center;
+      color: #94a3b8;
+    }
+
+    footer a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
+      .hero .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero {
+        padding-top: 140px;
+      }
+
+      .btn-group,
+      .hero-stats {
+        justify-content: center;
+      }
+
+      .navbar {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      .container {
+        padding: 0 24px;
+      }
+
+      .form-card {
+        padding: 28px;
+      }
+
+      .boats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experiences-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <img src="./img/logo.png" alt="Lanchas Comendador" class="logo-img">
+        <div class="logo-text">
+          <h1>LANCHAS COMENDADOR</h1>
+          <span>EXPERIÊNCIA SOBRE AS ÁGUAS</span>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#catalogo">Lanchas</a>
+        <a href="#experiencias">Experiências</a>
+        <a href="#reservar">Reservar</a>
+      </div>
+      <div class="instagram-badge">
+        <i class="fab fa-instagram"></i>
+        <a href="https://www.instagram.com/lanchas.comendador" target="_blank">@lanchas.comendador</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Aluguel de <span class="blue-text">Lanchas Premium</span> e Jet Ski</h1>
+          <p>Viva momentos inesquecíveis no mar com a frota mais exclusiva. Luxo, conforto e adrenalina com @lanchas.comendador.</p>
+          <div class="btn-group">
+            <a href="#reservar" class="btn-primary"><i class="fab fa-whatsapp"></i> RESERVAR AGORA</a>
+            <a href="#catalogo" class="btn-outline"><i class="fas fa-ship"></i> VER LANCHAS</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h3>+1000</h3><span>Clientes felizes</span>
+            </div>
+            <div class="stat-item">
+              <h3>3</h3><span>Lanchas na frota</span>
+            </div>
+            <div class="stat-item">
+              <h3>24h</h3><span>Suporte exclusivo</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image"></div>
+      </div>
+    </section>
+
+    <section class="catalog" id="catalogo">
+      <div class="container">
+        <h2 class="section-title">Nossa Frota</h2>
+        <div class="section-sub">Escolha sua lancha ideal e adicione um Jet Ski para turbinar a diversão</div>
+
+        <div class="boats-grid">
+          <!-- Comendador IV -->
+          <div class="boat-card">
+            <img class="boat-img" src="./img/c4-1.jpg" alt="comendador iv">
+            <div class="boat-gallery">
+              <div class="gallery-title"><i class="fas fa-images"></i> Galeria</div>
+              <div class="gallery-thumbs">
+                <img src="./img/c4-2.jpg" onclick="openLightbox('comendador iv', 0)">
+                <img src="./img/c4-3.jpg" onclick="openLightbox('comendador iv', 1)">
+                <img src="./img/c4-4.jpg" onclick="openLightbox('speedster', 2)">
+                <img src="./img/c4-5.jpg" onclick="openLightbox('speedster', 3)">
+              </div>
+            </div>
+            <div class="boat-info">
+              <h3>🏎️ Comendador IV</h3>
+              <div class="boat-specs"><span><i class="fas fa-users"></i> 15 pessoas</span><span><i class="fas fa-bluetooth"></i> Som</span></div>
+              <div class="price">R$ 1.499 / 5h</div>
+              <button class="select-boat" onclick="quickSelect('Comendador IV',1499)">Selecionar lancha</button>
+            </div>
+          </div>
+
+          <!-- Comendador VII -->
+          <div class="boat-card">
+            <img class="boat-img" src="./img/c7-1.jpg" alt="Comendador VII">
+            <div class="boat-gallery">
+              <div class="gallery-title"><i class="fas fa-images"></i> Galeria</div>
+              <div class="gallery-thumbs">
+                <img src="./img/c7-2.jpg" onclick="openLightbox('comendador vii', 0)">
+                <img src="./img/c7-3.jpg" onclick="openLightbox('comendador vii', 1)">
+                <img src="./img/c7-4.jpg" onclick="openLightbox('comendador vii', 2)">
+                <img src="./img/c7-5.jpg" onclick="openLightbox('comendador vii', 3)">
+              </div>
+            </div>
+            <div class="boat-info">
+              <h3>✨ Comendador VII</h3>
+              <div class="boat-specs"><span><i class="fas fa-users"></i> 25 pessoas</span><span><i class="fas fa-utensils"></i> Cozinha</span><span><i class="fas fa-bed"></i> Suítes</span></div>
+              <div class="price">R$ 4.999 / 5h</div>
+              <button class="select-boat" onclick="quickSelect('Comendador VII',4999)">Selecionar lancha</button>
+            </div>
+          </div>
+
+          <!-- Comendador VIII -->
+          <div class="boat-card">
+            <img class="boat-img" src="./img/c8-1.jpg" alt="Comendador VIII">
+            <div class="boat-gallery">
+              <div class="gallery-title"><i class="fas fa-images"></i> Galeria</div>
+              <div class="gallery-thumbs">
+                <img src="./img/c8-2.jpg" onclick="openLightbox('comendador viii', 0)">
+                <img src="./img/c8-3.jpg" onclick="openLightbox('comendador viii', 1)">
+                <img src="./img/c8-4.jpg" onclick="openLightbox('comendador viii', 2)">
+                <img src="./img/c8-5.jpg" onclick="openLightbox('comendador viii', 3)">
+              </div>
+            </div>
+            <div class="boat-info">
+              <h3>🛥️ Comendador VIII</h3>
+              <div class="boat-specs"><span><i class="fas fa-users"></i> 25 pessoas</span><span><i class="fas fa-champagne-glasses"></i> Flybridge</span><span><i class="fas fa-fire"></i> Churrasq.</span></div>
+              <div class="price">R$ 8.999 / 5h</div>
+              <button class="select-boat" onclick="quickSelect('Comendador VIII',8999)">Selecionar lancha</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jet Ski -->
+        <div class="jetski-showcase">
+          <div class="jetski-wrapper">
+            <div class="jetski-details">
+              <h2><i class="fas fa-water"></i> Jet Ski Seadoo GTX 170</h2>
+              <p>Adrenalina pura! Adicione ao seu aluguel e pilote nas melhores águas.</p>
+              <div class="price-grid">
+                <div class="price-pill" data-h="1" data-p="600">1h - R$600</div>
+                <div class="price-pill" data-h="2" data-p="1200">2h - R$1.200</div>
+                <div class="price-pill" data-h="3" data-p="1800">3h - R$1.800</div>
+                <div class="price-pill" data-h="5" data-p="2500">5h - R$2.500</div>
+              </div>
+            </div>
+            <div class="jetski-img">
+              <img src="./img/jet.jpg" alt="Jet Ski">
+            </div>
+          </div>
+        </div>
+
+        <!-- Seção Experiências Premium (abaixo das lanchas) -->
+        <div class="experiences-section" id="experiencias">
+          <h2 class="experiences-title">Experiências Premium</h2>
+          <div class="experiences-sub">Transforme seu passeio com serviços exclusivos a bordo. Vídeos e fotos reais das experiências.</div>
+
+          <!-- Anchor Points para cada experiência -->
+          <div class="anchor-points">
+            <a href="#exp-dj" class="anchor-btn" onclick="scrollToExperience('exp-dj')"><i class="fas fa-headphones"></i> DJ Exclusivo</a>
+            <a href="#exp-barman" class="anchor-btn" onclick="scrollToExperience('exp-barman')"><i class="fas fa-cocktail"></i> Barman Premium</a>
+            <a href="#exp-churrasco" class="anchor-btn" onclick="scrollToExperience('exp-churrasco')"><i class="fas fa-fire"></i> Kit Churrasco</a>
+          </div>
+
+          <div class="experiences-grid">
+            <!-- DJ Experience -->
+            <div id="exp-dj" class="exp-card">
+              <video class="exp-video" poster="https://images.unsplash.com/photo-1571266028243-3716f02d2f1b?w=800&auto=format" controls>
+                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+                Seu navegador não suporta vídeo.
+              </video>
+              <div class="exp-info">
+                <h3><i class="fas fa-headphones"></i> DJ Exclusivo</h3>
+                <p>Música ambiente de alta qualidade com DJ profissional. Escolha o estilo: lounge, house, pop ou personalizado. Equipamento de som premium.</p>
+                <div class="exp-features">
+                  <span class="exp-feature">Som profissional</span>
+                  <span class="exp-feature">Playlist personalizada</span>
+                  <span class="exp-feature">Iluminação LED</span>
+                </div>
+                <div class="exp-price">A partir de R$ 800</div>
+              </div>
+            </div>
+
+            <!-- Barman Experience -->
+            <div id="exp-barman" class="exp-card">
+              <video class="exp-video" poster="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=800&auto=format" controls>
+                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFunrides.mp4" type="video/mp4">
+                Seu navegador não suporta vídeo.
+              </video>
+              <div class="exp-info">
+                <h3><i class="fas fa-cocktail"></i> Barman Premium</h3>
+                <p>Coquetéis exclusivos preparados na hora por barman profissional. Drinks autorais, clássicos e sem álcool. Inclui utensílios e apresentação.</p>
+                <div class="exp-features">
+                  <span class="exp-feature">Coquetéis autorais</span>
+                  <span class="exp-feature">Frutas frescas</span>
+                  <span class="exp-feature">Utensílios completos</span>
+                </div>
+                <div class="exp-price">A partir de R$ 600</div>
+              </div>
+            </div>
+
+            <!-- Kit Churrasco -->
+            <div id="exp-churrasco" class="exp-card">
+              <video class="exp-video" poster="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&auto=format" controls>
+                <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
+                Seu navegador não suporta vídeo.
+              </video>
+              <div class="exp-info">
+                <h3><i class="fas fa-fire"></i> Kit Churrasco Premium</h3>
+                <p>Churrasqueira a bordo com carne selecionada, acompanhamentos e bebidas. Inclui carvão, espetos e atendimento exclusivo.</p>
+                <div class="exp-features">
+                  <span class="exp-feature">Carnes nobres</span>
+                  <span class="exp-feature">Acompanhamentos</span>
+                  <span class="exp-feature">Bebidas inclusas</span>
+                </div>
+                <div class="exp-price">A partir de R$ 450</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Galeria de Fotos das Experiências -->
+          <div style="margin-top: 60px;">
+            <h3 style="text-align: center; margin-bottom: 30px; font-family: 'DM Serif Display', serif;">Galeria de Momentos</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+              <img src="./img/exp1.jpeg" style="border-radius: 20px; width:100%; height:180px; object-fit:cover; cursor:pointer;" onclick="openImageGallery('https://images.unsplash.com/photo-1571266028243-3716f02d2f1b?w=800&auto=format', 'DJ animando a festa')">
+              <img src="./img/exp7.jpg" style="border-radius: 20px; width:100%; height:180px; object-fit:cover; cursor:pointer;" onclick="openImageGallery('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=800&auto=format', 'Barman preparando drinks')">
+              <img src="./img/exp3.jpg" style="border-radius: 20px; width:100%; height:180px; object-fit:cover; cursor:pointer;" onclick="openImageGallery('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&auto=format', 'Churrasco a bordo')">
+              <img src="./img/exp6.jpeg" style="border-radius: 20px; width:100%; height:180px; object-fit:cover; cursor:pointer;" onclick="openImageGallery('https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?w=800&auto=format', 'Pôr do sol com música')">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulário de reserva -->
+    <section class="form-section" id="reservar">
+      <div class="container">
+        <div class="form-card">
+          <h2 style="text-align:center; margin-bottom: 8px; font-family: 'DM Serif Display', serif;">Solicitar reserva</h2>
+          <p style="text-align:center; margin-bottom: 32px; color:#5a6e7e;">Preencha e receba orçamento no WhatsApp</p>
+
+          <form id="bookingForm">
+            <div class="form-group">
+              <label>Nome completo</label>
+              <input type="text" id="nome" placeholder="Seu nome" required>
+            </div>
+            <div class="form-group">
+              <label>WhatsApp com DDD</label>
+              <input type="tel" id="telefone" placeholder="(11) 99999-9999" required>
+            </div>
+            <div class="form-group">
+              <label>📅 Data do passeio</label>
+              <input type="date" id="data" required>
+            </div>
+            <div class="form-group">
+              <label>⏰ Horário de saída</label>
+              <input type="time" id="horario" required>
+            </div>
+            <div class="form-group">
+              <label>🛥️ Escolha sua lancha</label>
+              <select id="boatSelect" required>
+                <option value="">-- Selecione --</option>
+                <option value="Speedster 320|1890">Comendador IV</option>
+                <option value="Marquis 420|2990">Comendador VII</option>
+                <option value="Master Yacht 55|4490">Comendador VIII</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>🎧 Experiências adicionais</label>
+              <select id="experienciaSelect">
+                <option value="">Nenhuma experiência</option>
+                <option value="DJ Exclusivo|800">DJ Exclusivo - R$ 800</option>
+                <option value="Barman Premium|600">Barman Premium - R$ 600</option>
+                <option value="Kit Churrasco Premium|450">Kit Churrasco Premium - R$ 450</option>
+              </select>
+            </div>
+
+            <div class="checkbox-flex">
+              <input type="checkbox" id="incluirJet">
+              <label for="incluirJet">➕ Adicionar Jet Ski ao passeio</label>
+            </div>
+
+            <div id="jetExtra" class="jetski-extra">
+              <label>⏱️ Duração do Jet Ski:</label>
+              <select id="jetDuration" style="margin-top: 8px;">
+                <option value="1|600">1 hora - R$ 600</option>
+                <option value="2|1200">2 horas - R$ 1.200</option>
+                <option value="3|1800">3 horas - R$ 1.800</option>
+                <option value="5|2500">5 horas - R$ 2.500</option>
+              </select>
+            </div>
+
+            <div class="total-box" id="totalPreview">
+              TOTAL ESTIMADO: R$ 0,00
+            </div>
+
+            <button type="submit" class="btn-wa"><i class="fab fa-whatsapp"></i> Enviar reserva via WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><i class="fab fa-instagram"></i> <strong>@lanchas.comendador</strong> • Aluguel de lanchas com excelência</p>
+      <p style="margin-top: 12px; font-size:0.8rem;">© 2025 Lanchas Comendador - Navegue com segurança e estilo.</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <span class="lightbox-prev" onclick="prevImage()">&#10094;</span>
+    <span class="lightbox-next" onclick="nextImage()">&#10095;</span>
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+
+  <script>
+    // Galerias de imagens das lanchas
+    const galleries = {
+      speedster: [
+        'https://images.unsplash.com/photo-1605281317010-fe54ffe6c6bd?w=800&auto=format',
+        'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=800&auto=format',
+        'https://images.unsplash.com/photo-1544551763-46a013bb70e3?w=800&auto=format',
+        'https://images.unsplash.com/photo-1598182198871-d3f4ab4fd181?w=800&auto=format'
+      ],
+      marquis: [
+        'https://images.unsplash.com/photo-1544551763-46a013bb70e3?w=800&auto=format',
+        'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=800&auto=format',
+        'https://images.unsplash.com/photo-1605281317010-fe54ffe6c6bd?w=800&auto=format',
+        'https://images.unsplash.com/photo-1569263979104-865ab7cd8c13?w=800&auto=format'
+      ],
+      master: [
+        'https://images.unsplash.com/photo-1569263979104-865ab7cd8c13?w=800&auto=format',
+        'https://images.unsplash.com/photo-1605281317010-fe54ffe6c6bd?w=800&auto=format',
+        'https://images.unsplash.com/photo-1544551763-46a013bb70e3?w=800&auto=format',
+        'https://images.unsplash.com/photo-1598182198871-d3f4ab4fd181?w=800&auto=format'
+      ]
+    };
+
+    let currentGallery = [];
+    let currentIndex = 0;
+
+    function openLightbox(boat, index) {
+      currentGallery = galleries[boat];
+      currentIndex = index;
+      document.getElementById('lightbox-img').src = currentGallery[currentIndex];
+      document.getElementById('lightbox-caption').textContent = `Foto ${currentIndex + 1} de ${currentGallery.length}`;
+      document.getElementById('lightbox').classList.add('active');
+    }
+
+    function openImageGallery(imgSrc, caption) {
+      currentGallery = [imgSrc];
+      currentIndex = 0;
+      document.getElementById('lightbox-img').src = imgSrc;
+      document.getElementById('lightbox-caption').textContent = caption;
+      document.getElementById('lightbox').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+
+    function prevImage() {
+      if (currentGallery.length === 0) return;
+      currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+      document.getElementById('lightbox-img').src = currentGallery[currentIndex];
+      document.getElementById('lightbox-caption').textContent = `Foto ${currentIndex + 1} de ${currentGallery.length}`;
+    }
+
+    function nextImage() {
+      if (currentGallery.length === 0) return;
+      currentIndex = (currentIndex + 1) % currentGallery.length;
+      document.getElementById('lightbox-img').src = currentGallery[currentIndex];
+      document.getElementById('lightbox-caption').textContent = `Foto ${currentIndex + 1} de ${currentGallery.length}`;
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'ArrowRight') nextImage();
+    });
+
+    // Função para scroll suave até a experiência
+    function scrollToExperience(expId) {
+      const element = document.getElementById(expId);
+      if (element) {
+        const offset = 100;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    function quickSelect(name, price) {
+      const select = document.getElementById('boatSelect');
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].text.includes(name)) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+      updateTotal();
+      document.getElementById('reservar').scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+
+    function updateTotal() {
+      const boatSelect = document.getElementById('boatSelect');
+      let boatPrice = 0;
+      if (boatSelect.value) {
+        boatPrice = parseInt(boatSelect.value.split('|')[1]);
+      }
+      let jetPrice = 0;
+      if (document.getElementById('incluirJet').checked) {
+        jetPrice = parseInt(document.getElementById('jetDuration').value.split('|')[1]);
+      }
+      let expPrice = 0;
+      const expSelect = document.getElementById('experienciaSelect');
+      if (expSelect.value) {
+        expPrice = parseInt(expSelect.value.split('|')[1]);
+      }
+      const total = boatPrice + jetPrice + expPrice;
+      document.getElementById('totalPreview').innerHTML = `TOTAL ESTIMADO: R$ ${total.toLocaleString('pt-BR')}`;
+    }
+
+    const jetCheck = document.getElementById('incluirJet');
+    const jetDiv = document.getElementById('jetExtra');
+    jetCheck.addEventListener('change', function (e) {
+      jetDiv.classList.toggle('active', e.target.checked);
+      updateTotal();
+    });
+
+    document.getElementById('boatSelect').addEventListener('change', updateTotal);
+    document.getElementById('jetDuration').addEventListener('change', updateTotal);
+    document.getElementById('experienciaSelect').addEventListener('change', updateTotal);
+
+    document.querySelectorAll('.price-pill').forEach(pill => {
+      pill.addEventListener('click', function () {
+        const horas = this.getAttribute('data-h');
+        const preco = this.getAttribute('data-p');
+        if (!jetCheck.checked) {
+          jetCheck.checked = true;
+          jetDiv.classList.add('active');
+        }
+        const jetSelect = document.getElementById('jetDuration');
+        for (let i = 0; i < jetSelect.options.length; i++) {
+          if (jetSelect.options[i].value === `${horas}|${preco}`) {
+            jetSelect.selectedIndex = i;
+            break;
+          }
+        }
+        updateTotal();
+        document.getElementById('reservar').scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    document.getElementById('bookingForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value.trim();
+      const telefone = document.getElementById('telefone').value.trim();
+      const data = document.getElementById('data').value;
+      const horario = document.getElementById('horario').value;
+      const boatRaw = document.getElementById('boatSelect').value;
+      if (!boatRaw) {
+        alert("Selecione uma lancha.");
+        return;
+      }
+      const boatName = boatRaw.split('|')[0];
+      const boatPrice = parseInt(boatRaw.split('|')[1]);
+
+      let jetMsg = "";
+      let jetPriceTotal = 0;
+      if (document.getElementById('incluirJet').checked) {
+        const jetData = document.getElementById('jetDuration').value;
+        const horas = jetData.split('|')[0];
+        jetPriceTotal = parseInt(jetData.split('|')[1]);
+        jetMsg = `\n➕ *Jet Ski:* ${horas}h - R$ ${jetPriceTotal.toLocaleString('pt-BR')}`;
+      }
+
+      let expMsg = "";
+      let expPriceTotal = 0;
+      const expSelect = document.getElementById('experienciaSelect');
+      if (expSelect.value) {
+        const expName = expSelect.value.split('|')[0];
+        expPriceTotal = parseInt(expSelect.value.split('|')[1]);
+        expMsg = `\n🎧 *Experiência:* ${expName} - R$ ${expPriceTotal.toLocaleString('pt-BR')}`;
+      }
+
+      const totalGeral = boatPrice + jetPriceTotal + expPriceTotal;
+      const mensagem = `🌊 *RESERVA LANCHAS COMENDADOR* 🌊%0A%0A👤 *Cliente:* ${nome}%0A📞 *WhatsApp:* ${telefone}%0A📅 *Data:* ${data}%0A⏰ *Horário:* ${horario}%0A🛥️ *Lancha:* ${boatName} - R$ ${boatPrice.toLocaleString('pt-BR')}${jetMsg}${expMsg}%0A%0A💰 *VALOR TOTAL:* R$ ${totalGeral.toLocaleString('pt-BR')}%0A%0A🔹 *Obs:* Confirmar disponibilidade.%0A📍 @lanchas.comendador`;
+      const numero = "5511999999999";
+      window.open(`https://wa.me/${numero}?text=${mensagem}`, '_blank');
+      alert("Redirecionando para o WhatsApp!");
+    });
+
+    window.quickSelect = quickSelect;
+    window.scrollToExperience = scrollToExperience;
+    window.openLightbox = openLightbox;
+    window.openImageGallery = openImageGallery;
+    window.closeLightbox = closeLightbox;
+    window.prevImage = prevImage;
+    window.nextImage = nextImage;
+    updateTotal();
+  </script>
+</body>
+</html>
